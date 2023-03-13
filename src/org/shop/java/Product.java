@@ -34,6 +34,12 @@ Random rand = new Random();
         this.iva = iva;
     }
 
+    @Override
+    public String toString() {
+        String str = "codice: " + getCode() + " nome: " + getName() + " " + " descrizione: " + getDescription() + " prezzo: " + getPrice();
+        return str;
+    }
+
     public int getCode() {
         return code;
     }

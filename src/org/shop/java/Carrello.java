@@ -16,14 +16,20 @@ import java.util.Scanner;
 //        Nella classe Carrello chiedere all’utente se possiede una carta fedeltà
 //        In base alla risposta, calcolare il totale del carrello come somma dei prezzi base o dei prezzi scontati.
 public class Carrello {
+//    @Override
+//    public String toString(Product product) {
+//        String str = "codice: " + product.getCode() + "nome: " + product.getName() + " " + "descrizione: " + product.getDescription() + "prezzo: " + product.getPrice();
+//        return str;
+//    }
+
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Product[] products = new Product[10]; // creo un array in cui inseriró massimo 10 prodotti
+        Product[] products = new Product[3]; // creo un array in cui inseriró massimo 10 prodotti
 
 //        System.out.println(Arrays.toString(products));
 
-        System.out.println("Quanti prodotti vuoi aggiungere al carrello? (max 10)");
+        System.out.println("Quanti prodotti vuoi aggiungere al carrello? (max 3)");
         int loops = scan.nextInt();
 
         for (int i = 0; i < loops; i++) {
@@ -75,11 +81,19 @@ public class Carrello {
                    break;
                default:
                    System.out.println("non esiste nessuna categoria con questo nome");
+
            }
-           scan.close();
 
-            System.out.println(Arrays.toString(products));
 
+        }//chiusura del for loop
+        scan.close();
+
+        for (int i = 0; i < products.length; i++) {
+            if (products[i]!= null){
+                System.out.print("Prodotto n. " + i + ": ");
+                System.out.println(products[i].toString());
+            }
         }
     }
+
 }
