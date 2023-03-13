@@ -9,27 +9,27 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Product[] products = new Product[3]; // creo un array in cui inseriró 5 prodotti
 
-        System.out.println(Arrays.toString(products));
+//        System.out.println(Arrays.toString(products));
 
-        System.out.println("Scrivi le informazioni di questi 3 prodotti!");
         for (int i = 0; i < products.length; i++) {
+            System.out.println(" ");
             products[i] = new Product();
-            System.out.println(products[i].getCode());
+            System.out.println( "codice prodotto: " + products[i].getCode());
 
             System.out.print("Nome prodotto: ");
-            String name = scan.next(); //chiedo il nome del prodotto
+            String name = "smartphone 1";
             products[i].setName(name); //set product's name
 
             System.out.print("Descrizione prodotto: ");
-            String description = scan.next();
+            String description = "uno smartphone bellissimo";
             products[i].setDescription(description); //set product's description
 
             System.out.print("price prodotto: ");
-            BigDecimal price = scan.nextBigDecimal();
+            BigDecimal price = BigDecimal.valueOf(255.99);
             products[i].setPrice(price); //set product's price
 
             System.out.print("Iva prodotto: ");
-            BigDecimal iva = scan.nextBigDecimal();
+            BigDecimal iva = BigDecimal.valueOf(22);
             products[i].setIva(iva); //set product's iva
 
 
@@ -43,7 +43,7 @@ public class Main {
             System.out.println(products[i].getPrice());
 
             System.out.print("Iva: ");
-            System.out.println(products[i].getIva());
+            System.out.println(products[i].getIva() + "%");
 
             System.out.print("Prezzo compreso iva: ");
             System.out.println(products[i].getIvaPrice());
